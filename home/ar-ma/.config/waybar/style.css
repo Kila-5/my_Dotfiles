@@ -1,0 +1,188 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(10, 10, 15, 0.3);
+    color: #00ff41;
+    border-bottom: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+	
+/* ==================== ЛОГОТИП ARCH ==================== */
+#custom-arch {
+    font-size: 40px;
+    color: #b300ff;
+    text-shadow: 0 0 10px #b300ff, 0 0 20px #8000b3;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 0;
+}
+
+/* ==================== ГРУППА ВОРКСПЕЙСОВ В ОВАЛЕ ==================== */
+#workspaces {
+    background: rgba(50, 50, 55, 0.6);
+    border: 1px solid rgba(120, 120, 130, 0.3);
+    border-radius: 16px;
+    padding: 2px 6px;
+    margin: 10px 5px;
+}
+
+#workspaces button {
+    padding: 0;
+    margin: 0 3px;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #b300ff;
+    border-radius: 50%;
+    font-size: 10px;
+    min-width: 22px;
+    min-height: 22px;
+    box-shadow: 0 0 6px rgba(179, 0, 255, 0.4);
+    text-shadow: 0 0 5px #ffffff;
+}
+#workspaces button:hover {
+    color: #ffffff;
+    background: rgba(179, 0, 255, 0.2);
+    border-color: #d966ff;
+    box-shadow: 0 0 14px rgba(179, 0, 255, 0.8);
+    transition: all 0.15s ease;
+}
+#workspaces button.visible {
+    color: #ffffff;
+    background: transparent;
+    border-color: #ff0044;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.6);
+    text-shadow: 0 0 6px #ff0044;
+}
+#workspaces button.urgent {
+    color: #ffffff;
+    background: #ff0044;
+    border-color: #ff3377;
+    box-shadow: 0 0 16px rgba(255, 0, 68, 0.9);
+    animation: pulse 0.8s ease-in-out infinite alternate;
+}
+@keyframes pulse {
+    from { box-shadow: 0 0 10px rgba(255, 0, 68, 0.6); }
+    to { box-shadow: 0 0 22px rgba(255, 0, 68, 1); }
+}
+#workspaces button.active {
+    color: #ffffff;
+    background: #b300ff;
+    border-color: #d966ff;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(179, 0, 255, 0.7);
+    animation: none;
+}
+#network {
+    background: rgba(50, 50, 55, 0.6); /* Полупрозрачный фон как у воркспейсов */
+    border: 1px solid #b300ff;        /* Фиолетовая неоновая рамка */
+    border-radius: 16px;             /* Скругление для формы "пузырька" */
+    padding: 2px 10px;               /* Внутренние отступы */
+    margin: 10px 5px;                /* Внешние отступы как у овала воркспейсов */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 6px rgba(179, 0, 255, 0.2); /* Легкое фиолетовое свечение */
+}
+/* ==================== ВСЕ МОДУЛИ СПРАВА ==================== */
+#custom-user,
+#keyboard-state,
+#temperature,
+#custom-weather,
+#pulseaudio,
+
+#cpu,
+#memory,
+#tray {
+    background: transparent;
+    color: #00ff41;
+    padding: 0 8px;
+    margin: 0;
+    font-size: 16px;
+}
+
+#clock {
+    background: rgba(0, 255, 65, 0.12);
+    border: 1px solid #00ff41;
+    border-radius: 10px;
+    padding: 2px 16px;
+    margin: 4px 0;
+    color: #00ff41;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.25);
+}
+
+/* ==================== АКЦЕНТЫ ==================== */
+#custom-user {
+    color: #00ff41;
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.3);
+}
+
+#keyboard-state {
+    color: #00ff41;
+    font-weight: bold;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 8px;
+    padding: 0 8px;
+    margin: 0 4px;
+    text-shadow: 0 0 6px rgba(0, 255, 65, 0.5);
+}
+
+#temperature {
+    color: #00ff41;
+}
+
+#custom-weather {
+    color: #00ff88;
+}
+
+#pulseaudio {
+    color: #00ff41;
+}
+#custom-wifi {
+    color: #00ff41;
+    font-weight: bold;
+    background: rgba(0, 255, 65, 0.1);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 8px;
+    padding: 0 8px;
+    margin: 0 4px;
+    text-shadow: 0 0 6px rgba(0, 255, 65, 0.4);
+}
+
+#cpu, #memory {
+    color: #00ff41;
+}
+
+#language {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    background: rgba(0, 255, 65, 0.15);
+    border: 1px solid #00ff41;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin: 5px 6px;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.3), inset 0 0 4px rgba(0, 255, 65, 0.15);
+}
+#backlight {
+    font-size: 20px;
+}
+
+
+/* ==================== ТУЛТИП ==================== */
+tooltip {
+    background: #0a0a0f;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    font-size: 12px;
+}

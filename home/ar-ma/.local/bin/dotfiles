@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DOTFILES="$HOME/.dotfiles"
+
+cd "$DOTFILES" || exit 1
+
+case "$1" in
+    add)
+        shift
+        for file in "$@"; do
+            cp -r --parents "$file" "$DOTFILES/"
+        done
+        git add -A
+        git status
+        ;;
+    status)
+        git status
+        ;;
+    commit)
+        shift
+        git commit -m "$*"
+        ;;
+    push)
+        git push origin main
+        ;;
+    pull)
+        git pull origin main
+        ;;
+    *)
+        echo "Usage: dotfiles {add|status|commit|push|pull}"
+        ;;
+esac

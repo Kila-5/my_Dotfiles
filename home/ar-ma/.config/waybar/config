@@ -1,0 +1,117 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+
+    "modules-left": ["custom/arch", "hyprland/workspaces", "network"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "custom/user",
+	"hyprland/language",
+        "temperature",
+        "custom/weather",
+        "pulseaudio",
+	"backlight",
+        "tray",
+	"custom/wifi"	
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+    		"1": "1",
+    		"2": "2",
+    		"3": "3",
+    		"4": "4",
+    		"5": "5",
+    		"6": "6",
+    		"7": "7",
+    		"8": "8",
+    		"9": "9",
+    		"10": "0",
+    		"default": ""
+	},
+        "on-click": "activate",
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        },
+        "sort-by-number": true
+    },
+
+    "custom/user": {
+        "format": " {}",
+        "exec": "whoami",
+        "interval": "once"
+    },
+    "hyprland/language": {
+    	"format": " {}",
+    	"format-en": "US",
+    	"format-ru": "RU",
+    	"on-click": "hyprctl switchxkblayout all next" // Переключение кликом
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+        "format": " {temperatureC}°C",
+        "interval": 3
+    },
+
+    "custom/weather": {
+        "exec": "curl -s 'wttr.in/?format=%C+%t' | sed 's/ //g'",
+        "interval": 1800,
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "clock": {
+    	"format": "{:%H:%M:%S — %a | %d.%m}",
+	"interval": 1,
+    	"tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " 0%",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "network": {
+    	"format-wifi": " {bandwidthUpBits}  {bandwidthDownBits}",
+    	"format-ethernet": " {bandwidthUpBits}  {bandwidthDownBits}",
+    	"format-disconnected": "",
+    	"interval": 1,
+    	"tooltip-format": "{ifname}: {ipaddr}",
+    	"on-click": "kitty -e nmtui"
+    },
+
+    "tray": {
+        "spacing": 8
+    },
+    "custom/wifi": {
+    	"exec": "iwctl station wlan0 show | grep 'Connected network' | awk '{print $3}' || echo 'Offline'",
+    	"interval": 10,
+    	"format": " {}",
+    	"on-click": "kitty -e nmtui",
+    	"tooltip-format": "WiFi: {}"
+    },
+
+    "custom/arch": {
+    	"format": "󰣇",
+    	"tooltip": false
+    },
+
+    "backlight": {
+    	"device": "dell_uart_backlight",
+    	"format": "☀{percent}%",
+    	"on-scroll-up": "brightnessctl set 5%+",
+    	"on-scroll-down": "brightnessctl set 5%-"
+    },
+}
+

@@ -1,0 +1,77 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 360
+    height = 80
+    offset = 20x20
+    origin = top-right
+    notification_limit = 5
+    progress_bar = true
+    progress_bar_height = 3
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 100
+    progress_bar_max_width = 340
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 16
+    frame_width = 2
+    frame_color = "#b300ff"
+    gap_size = 4
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+    font = JetBrainsMono Nerd Font 13
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/:/usr/share/icons/Papirus/16x16/apps/
+    sticky_history = yes
+    history_length = 20
+    browser = firefox
+    dmenu = /usr/bin/wofi -d
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 12
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#0a0a0f"
+    foreground = "#008f11"
+    frame_color = "#803399"
+    timeout = 4
+
+[urgency_normal]
+    background = "#0a0a0f"
+    foreground = "#00ff41"
+    frame_color = "#b300ff"
+    timeout = 6
+
+[urgency_critical]
+    background = "#0a0a0f"
+    foreground = "#ff4444"
+    frame_color = "#ff0044"
+    timeout = 10
+
+[volume]
+    appname = volume
+    timeout = 1.5
+
+[brightness]
+    appname = brightness
+    timeout = 1.5
