@@ -1,0 +1,45 @@
+#ALL
+sudo pacman -S --needed \
+    waybar \
+    kitty \
+    zsh \
+    wofi \
+    neofetch \
+    fastfetch \
+    dunst \
+    pamixer \
+    brightnessctl \
+    grim \
+    slurp \
+    wl-clipboard \
+    curl \
+    bc \
+    htop \
+    btop \
+    fzf \
+    bat \
+    lsd \
+    micro \
+    git \
+    base-devel \
+    ttf-jetbrains-mono-nerd \
+    noto-fonts-emoji \
+    papirus-icon-theme \
+    swaybg
+
+    #######################################
+    AUR
+    yay -S --needed \
+    python-pywal \
+    wofi-calc \
+    cava \
+    pipes.sh \
+    cmatrix
+
+    ######################################
+    ZSH
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+    
